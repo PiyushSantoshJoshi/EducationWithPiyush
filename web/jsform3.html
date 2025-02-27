@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            .form-container{
+                width: 900px;
+                width: 900px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border: 1px solid lightgrey;
+                padding: 25px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                border-radius: 1rem;
+            }
+        </style>
+        
+</head>
+<body class="bg-light">
+    <div class="container form-container  bg-white">
+        <form id="personalForm" action="#">
+            <p class="mb-2 display-4 text-center fw-semibold">Forms</p>
+            <div class="mb-3 mt-3">
+                <label class="mb-2" for="name">Name:</label>
+                <input type="text" onchange="greetUser1()" id="name" name="name" class="form-control" required>
+                <p id="nameArea" style="color:red"></p>
+            </div>
+            <div class="mb-3">
+                <label class="mb-2" for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="mb-2" for="linkedin">LinkedIn Profile URL:</label>
+                <input type="url" id="linkedin" name="linkedin" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="mb-2" for="email">Email:</label>
+                <input type="email" onchange="greetUser2()" class="form-control" id="email" placeholder="abc@gmail.com" name="email" required>
+                <p id="email2" style="color:red"></p>
+            </div>
+            
+            <div class="mb-3">
+              <label class="mb-2" for="pwd">Password:</label>
+              <input type="password" onchange="greetUser3()" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+              <p id="pwd2" style="color:red"></p>
+            </div>
+            <div class="mb-3">
+                <label class="mb-2" for="phoneno">Phone Number:</label>
+                <input type="tel" onchange="greetUser4()" id="phoneno" name="phoneno" class="form-control"  required>
+                <p id="phoneno2" style="color:red"></p>
+            </div>
+
+            <!-- Age Field -->
+            <div class="mb-3">
+                <label class="mb-2" for="age">Age:</label>
+                <input type="number" id="age" name="age" class="form-control" min="18" max="100" required>
+            </div>
+
+            <!-- Price Range Field -->
+            <div class="mb-3">
+                <label class="mb-2" for="pricerange">Price Range:</label>
+                <input type="number" id="pricerange" name="pricerange" class="form-control" min="100000" required>
+            </div>
+
+            <!-- Gender Field -->
+            <div class="mb-3">
+                <label>Gender:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="male" name="gender" value="male" class="form-check-input" required>
+                    <label class="mb-2" for="male" class="form-check-label">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="female" name="gender" value="female" class="form-check-input" required>
+                    <label class="mb-2" for="female" class="form-check-label">Female</label>
+                </div>
+            </div>
+
+            <!-- Number of Cars Field -->
+            <div class="mb-3">
+                <label class="mb-2" for="noofcars">Number of Cars:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="2wheeler" name="noofcars" value="2wheeler" class="form-check-input">
+                    <label class="mb-2" for="2wheeler" class="form-check-label">2-Wheeler</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="car" name="noofcars" value="car" class="form-check-input">
+                    <label class="mb-2" for="car" class="form-check-label">Car</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="truck" name="noofcars" value="truck" class="form-check-input">
+                    <label class="mb-2" for="truck" class="form-check-label">Truck</label>
+                </div>
+            </div>
+
+            <!-- Salary Field -->
+            <div class="mb-3">
+                <label class="mb-2" for="salary">Salary:</label>
+                <input type="range" id="salary" name="salary" class="form-control-range" min="4000" max="100000" step="1000" required>
+            </div>
+
+            <!-- City Dropdown Field -->
+            <div class="mb-3">
+                <label class="mb-2" for="city">City:</label>
+                <select id="city" name="city" class="form-control" required>
+                    <option value="pune">Select City</option>
+                    <option value="pune">Pune</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="delhi">Delhi</option>
+                </select>
+            </div>
+            <div class="form-check mb-3">
+                <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="mt-5 row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <button type="submit" class="col btn btn-primary">Submit</button>
+                <div class="col"></div>
+                <button type="reset" class="col btn btn-secondary">Reset</button>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+            
+        </form>
+    
+        <script>
+            function greetUser1() {
+                const name = document.getElementById("name").value.trim();
+                // Validate Name Length
+                if (name.length < 5) {
+                    document.getElementById("nameArea").innerHTML = "Name must be at least 5 characters long.";
+                }
+                else{
+                    document.getElementById("nameArea").innerHTML = "";
+                }
+            }
+            function greetUser2() {
+                const email = document.getElementById("email").value.trim();
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ ;
+                // Validate email length and format
+                if(email.length < 5){
+                    document.getElementById("email2").innerHTML = "Email must be at least 5 characters long.";
+                    
+                }
+                else if(!emailRegex.test(email)){
+                    document.getElementById("email2").innerHTML = "Invalid Email";
+                }
+                else{
+                    document.getElementById("email2").innerHTML = "";
+                }
+            }
+            function greetUser3() {
+                const pwd = document.getElementById("pwd").value.trim();
+                const pwdRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/ ;
+
+                if(!pwdRegex.test(pwd)){
+                    document.getElementById("pwd2").innerHTML = "- at least 8 characters <br>- must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number <br>- Can contain special characters";
+                }
+                else{
+                    document.getElementById("pwd2").innerHTML = "";
+                }
+            }
+            function greetUser4() {
+                const phoneno = document.getElementById("phoneno").value.trim();
+                const phonenoRegex = /^[0-9]{10}$/;
+                if(!phonenoRegex.test(phoneno)){
+                    document.getElementById("phoneno2").innerHTML = "Phone No. must be 10 digits.";
+                }
+                else{
+                    document.getElementById("phoneno2").innerHTML = "";
+                }
+            }
+
+            document.getElementById("personalForm").addEventListener("submit", function (event) {
+                
+                function writeOutput(text) {
+                    const outputDiv = document.getElementById('personalForm');
+                    outputDiv.innerHTML += `<p class="text-danger">${text}</p>`;
+                }
+                event.preventDefault(); // Prevent form submission
+            });
+        </script>
+        
+    </div>
+</body>
+</html>

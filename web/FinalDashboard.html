@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("barContainer", {
+                animationEnabled: true,
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Top Oil Reserves"
+                },
+                axisY: {
+                    title: "Reserves(MMbbl)"
+                },
+                data: [{
+                    type: "column",
+                    showInLegend: true,
+                    legendMarkerColor: "grey",
+                    legendText: "MMbbl = one million barrels",
+                    dataPoints: [
+                        { y: 300878, label: "Venezuela" },
+                        { y: 266455, label: "Saudi" },
+                        { y: 169709, label: "Canada" },
+                        { y: 158400, label: "Iran" },
+                        { y: 142503, label: "Iraq" },
+                        { y: 101500, label: "Kuwait" },
+                        { y: 97800, label: "UAE" },
+                        { y: 80000, label: "Russia" }
+                    ]
+                }]
+            });
+            chart.render();
+
+            var chart2 = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Email Categories",
+                    horizontalAlign: "left"
+                },
+                data: [{
+                    type: "doughnut",
+                    startAngle: 60,
+                    //innerRadius: 60,
+                    indexLabelFontSize: 17,
+                    indexLabel: "{label} - #percent%",
+                    toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                    dataPoints: [
+                        { y: 67, label: "Inbox" },
+                        { y: 28, label: "Archives" },
+                        { y: 10, label: "Labels" },
+                        { y: 7, label: "Drafts" },
+                        { y: 15, label: "Trash" },
+                        { y: 6, label: "Spam" }
+                    ]
+                }]
+            });
+            chart2.render();
+
+        }
+    </script>
+    <style>
+        .nl {
+            color: lightslategray;
+        }
+
+        .nl:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Heading</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Some text lorem ipsum.</p>
+            <p>Some text lorem ipsum.</p>
+            <p>Some text lorem ipsum.</p>
+            <button class="btn btn-secondary" type="button">A Button</button>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 col-md-3 d-none d-md-block text-white bg-dark">
+                <div class="d-flex flex-column" style="height: 100vh;">
+                    <a class="nl text-decoration-none" href="#">
+                        <div class="p-4 mt-2 mb-2 ">
+                            <div class="row">
+                                <svg fill="#ffffff" width="48px" height="48px" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            d="M1,22V8a1,1,0,0,1,.349-.759l7-6a1,1,0,0,1,1.3,0l7,6A1,1,0,0,1,17,8v7a1,1,0,0,1-2,0V8.46L9,3.317,3,8.46V21H15a1,1,0,0,1,0,2H2A1,1,0,0,1,1,22ZM7,9A2,2,0,1,0,9,7,2,2,0,0,0,7,9ZM23,19a1,1,0,0,0-1-1H20V16a1,1,0,0,0-2,0v2H16a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V20h2A1,1,0,0,0,23,19Z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="text-decoration-none text-white" href="#">
+                        <div class="mt-4 mb-3 ">
+                            <div class="row">
+                                <div class="col-3 justify-content-center"><img class="rounded-5"
+                                        src="assets/profile.png" width="100%"></div>
+                                <div class="col-9" style="line-height:75%">
+                                    <p class="fs-5" style="line-height:150%">Angry Buddy</p>
+                                    <p class="fs-6 fw-light">Administrator.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <a class="nl text-decoration-none" href="#">
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="mt-1 col-2">
+                                    <img src="assets/svgfolder/dashbpng/activity.svg">
+                                </div>
+                                <div class=" col-10">
+                                    Activity
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="nl text-decoration-none" href="#">
+                        <div class="p-2">
+                            <div class="row">
+                                <div class=" col-2">
+                                    <img src="assets/svgfolder/dashbpng/dhome.svg">
+                                </div>
+                                <div class=" col-10">
+                                    Home
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="nl text-decoration-none" href="#">
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="mt-1 col-2">
+                                    <img src="assets/svgfolder/dashbpng/dschedule.svg">
+                                </div>
+                                <div class=" col-10">
+                                    Schedule
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="nl text-decoration-none" href="#">
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="mt-1 col-2">
+                                    <img src="assets/svgfolder/dashbpng/dcourses.svg">
+                                </div>
+                                <div class=" col-10">
+                                    Courses
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="nl text-decoration-none" href="#">
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="mt-1 col-2">
+                                    <img src="assets/svgfolder/dashbpng/dvideos.svg">
+                                </div>
+                                <div class=" col-10">
+                                    Videos
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="nl text-decoration-none" href="#">
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="mt-1 col-2">
+                                    <img src="assets/svgfolder/dashbpng/analytics.svg">
+                                </div>
+                                <div class=" col-10">
+                                    Analytics
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="nl text-decoration-none" href="#">
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="mt-1 col-2">
+                                    <img src="assets/svgfolder/dashbpng/settings.svg">
+                                </div>
+                                <div class=" col-10">
+                                    Settings
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="mt-auto ">
+                        <a class="nl text-decoration-none" href="#">
+                            <div class="p-2">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="assets/svgfolder/dashbpng/dsupport.svg">
+                                    </div>
+                                    <div class="col-10">
+                                        Support
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class=" mb-3"><a class="nl text-decoration-none" href="#">
+                            <div class="p-2">
+                                <div class="row">
+                                    <div class="mt-1 col-2">
+                                        <img src="assets/svgfolder/dashbpng/logout.svg">
+                                    </div>
+                                    <div class=" col-10">
+                                        Log-out
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Cards row -->
+            <div class="col-lg-3 d-none d-lg-block bg-light">
+                <p class="fs-3 fw-bold border-bottom">Dashboard</p>
+
+                <div class="px-3 row">
+                    <div class="col-9">
+                        <p class="fs-5 fw-bold ">My Cards</p>
+                    </div>
+                    <div class="py-1 col-1"><img src="assets/svgfolder/dashbpng/settings.svg"></div>
+                    <div class="py-1 col-1">
+                        <img src="assets/svgfolder/dashbpng/dhome.svg">
+                    </div>
+                </div>
+                <div class=" row">
+                    <div>
+                        <div class="col-12">
+                            <img class="rounded-4" src="assets/svgfolder/dashbpng/image.png" width="100%">
+                        </div>
+                        <div class="col-12 rounded bg-white my-3 p-3" style="height: 200px ; width: 100%;">
+                            <div class="row border-bottom">
+                                <p> Your Balance</p>
+                                <div class="col-4 text-center">
+
+                                    <p class="fs-4 fw-bold fw-light">$1,000</p>
+                                </div>
+                                <div class="col-4 ">
+                                    <img src="assets/svgfolder/uparrow.svg"><b>16.60%</b>
+                                </div>
+                                <div class="col-4">
+                                    <img src="assets/svgfolder/dashbpng/darrow.svg"><b>10.30%</b>
+
+                                </div>
+                            </div>
+                            <div class="p-2 row">
+                                <div class="col-6">
+                                    <p>Currency</p>
+                                    <p class="fw-semibold">USD/UAH</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>Status</p>
+                                    <p class="fw-semibold">Active</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mt-1 mb-1 row">
+                    <div>
+                        <button type="button" class="col-12 btn border rounded">
+                            <img src="assets/svgfolder/dashbpng/add.svg"> Add new card</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Dashboard -->
+            <div class=" col-lg-7 col-md-9 col-sm-12 bg-white">
+
+                <div class="container-fluid mt-3">
+                    <div class="row mb-2">
+                        <div class="col-2 d-sm-block d-md-none text-white">
+                            <div class=""><button class="btn  btn-light" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#demo">
+                                    <img src="assets/svgfolder/dashbpng/menu.svg">
+                                </button></div>
+                        </div>
+                        <div class=" col-6 text-white">
+                            <div> <input class="bg-light form-control  border-0" type="text"
+                                    placeholder="Search"></div>
+                        </div>
+                        <div class="col-2 d-sm-block d-md-none text-white">
+                            <div class=""><button class="btn btn-light" type="button">
+                                    <img class=" rounded" src="assets/svgfolder/dashbpng/sliders.svg">
+                                </button></div>
+                        </div>
+                        <div class="col-2 d-sm-block d-md-none text-white">
+                            <div class=""><button class="btn btn-light" type="button">
+                                    <img class=" rounded" src="assets/svgfolder/dashbpng/sliders.svg">
+                                </button></div>
+                        </div>
+
+                        <div class="col-1 d-none d-md-block text-white">
+                            <div class=""><button class="btn btn-light" type="button">
+                                    <img class=" rounded" src="assets/svgfolder/dashbpng/sliders.svg">
+                                </button></div>
+                        </div>
+                        <div class="col-1 d-none d-md-block text-white">
+                            <div class=""><button class="btn btn-light" type="button">
+                                    <img class=" rounded" src="assets/svgfolder/dashbpng/sliders.svg">
+                                </button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-12">
+                        <div class="row">
+
+                            <div class="col-6">
+                                <div class=" p-2 rounded bg-light " style="height: 90% ; width:100%;">
+                                    <img src="assets/svgfolder/dashbpng/activity2.svg">
+                                    <p class="fw-semibold">Income.</p>
+                                    <p class="fs-3 fw-bold fw-light">$1,000</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class=" p-2 rounded bg-light " style="height: 90% ; width:100%;">
+                                    <img src="assets/svgfolder/dashbpng/activity2.svg">
+                                    <p class="fw-semibold">Down Payment.</p>
+                                    <p class="fs-3 fw-bold fw-light">$1,000</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class=" p-2 rounded bg-light " style="height: 90% ; width:100%;">
+                                    <img src="assets/svgfolder/dashbpng/activity2.svg">
+                                    <p class="fw-semibold">Complete.</p>
+                                    <p class="fs-3 fw-bold fw-light">$1,000</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class=" p-2 rounded bg-light " style="height: 90% ; width:100%;">
+                                    <img src="assets/svgfolder/dashbpng/activity2.svg">
+                                    <p class="fw-semibold">New Reveiws.</p>
+                                    <p class="fs-3 fw-bold fw-light">$1,000</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div id="chartContainer" style="height: 270px; width: 100%;"></div>
+                    </div>
+                </div>
+                <p class=" fw-semibold fs-4">Total Activity.</p>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-3">
+                        <div class="row">
+
+                            <div class="col-sm-6 col-md-6 col-lg-12 col-12">
+                                <div class=" p-2 rounded bg-light " style="height: 90% ; width:100%;">
+                                    <img src="assets/svgfolder/dashbpng/dot.svg"><b class="fs-6 fw-semibold">Total
+                                        Income.</b>
+                                    <p class="fs-6">&nbsp;</p>
+                                    <p class="fs-3 fw-bold">$1,000</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-12 col-12">
+                                <div class=" p-2 rounded bg-light " style="height: 90% ; width:100%;">
+                                    <img src="assets/svgfolder/dashbpng/dot.svg"><b class="fs-6 fw-semibold">Weekly
+                                        Income</b>
+                                    <p class="fs-6">&nbsp;</p>
+                                    <p class="fs-3 fw-bold">$1,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-9">
+                        <div id="barContainer" style="height: 350px; width: 100%;"></div>
+                        <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
